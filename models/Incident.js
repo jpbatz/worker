@@ -1,9 +1,6 @@
 module.exports = function(sequelize, Sequelize) {
   var Incident = sequelize.define('Incident', {
-    item: {
-      type: Sequelize.INTEGER,
-      unique: true
-    },
+    item: Sequelize.INTEGER,
     date: Sequelize.DATE,
   }, {
     classMethods: {

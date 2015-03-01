@@ -5,7 +5,7 @@ module.exports = function(sequelize, Sequelize) {
       unique: true
     },
     code: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       unique: true,
     }
   });

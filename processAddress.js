@@ -35,8 +35,10 @@ module.exports = function(addr) {  // uncomment to activate
   // end possible problems                
 
   var address = addr; // uncomment to activate
-  console.log(address);
+  // console.log(address);
 
+  if(address === null) return null;
+  
   // contains "KAM" - replace with "KAMEHAMEHA" (qty=1053+)
   if(address.match(/\bKAM\b/)) {
     address = address.replace(/\bKAM\b/, "KAMEHAMEHA");
@@ -79,7 +81,7 @@ module.exports = function(addr) {  // uncomment to activate
     // console.log(address);
   // }
 
-  console.log(address); 
+  // console.log(address); 
   return address;
 
 };  // uncomment to activate

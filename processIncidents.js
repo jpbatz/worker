@@ -26,9 +26,9 @@ var procAddr = require('./processAddress.js');
 // console.log(db);
 
 db
-  // .sequelize.sync({force: false})
-  // .raw_incident.findAll({ order: '"id" asc', limit: 1, offset: 1000 })
-  .raw_incident.findAll({ order: '"id" asc' })
+  // .sequelize.sync({force: true})
+  // .raw_incident.findAll({ order: '"item" asc', limit: 20000, offset: 148420 })
+  .raw_incident.findAll({ order: '"item" asc' })
 
   .then(function(incidents) {
 
@@ -82,6 +82,7 @@ db
 
           var locationData = {
               address: addr,
+              name: incident.location,
               lat: latitude,
               lng: longitude
               // AreaId : area
@@ -120,6 +121,8 @@ db
                 incident.setLocation(location);
                 incident.setIncidentType(incidentType);
                 return incident;
+              }, function(error) {
+                console.log(error);
               });
             });
           });
